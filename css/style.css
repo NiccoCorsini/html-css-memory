@@ -36,14 +36,12 @@ header h1{
 
 /* MAIN */
 main{
-    text-align: center;
     padding-top: 30px;
 }
 
 .card{
     float: left;
     margin: 15px;
-    background-color: transparent;
     width: 240px;
     height: 290px;
     perspective: 1000px;
