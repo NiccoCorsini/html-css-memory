@@ -1,0 +1,147 @@
+/* GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nerko One', cursive;
+}
+
+body{
+    background-color: #add8e5;
+}
+
+.container{
+    width: 57%;
+    margin: auto;
+}
+
+main::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* HEADER */
+header{
+    padding-top: 25px;
+}
+
+header h1{
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* MAIN */
+main{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.card{
+    float: left;
+    margin: 15px;
+    background-color: transparent;
+    width: 240px;
+    height: 290px;
+    perspective: 1000px;
+  }
+  
+.card-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    box-shadow: 5px 7px 8px rgba(0, 0, 0, 0.3);
+}
+  
+.card:hover .card-content{
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+  
+.card-front, .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+  
+.card-front{
+    background-color: white;
+    transform: rotateY(180deg);
+}
+
+.card-front img{
+    width: 85%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-front a{
+    text-decoration: none;
+    color: black;
+}
+
+.card-front a h3{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%);
+    font-size: 50px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+  
+.card-back{
+    background-image: url(../img/pattern.png);
+    background-color: white;
+    background-size: 150px;
+}
+
+.card-front a h3:hover{
+    color: orange;
+    transition: 0.5s;
+}
+
+.card-front a h3:active{
+    color: fuchsia;
+    transition: 0.2s;
+    text-shadow: 2px 2px 5px dodgerblue;
+}
+
+.card.reverse .card-content .card-back{
+    transform: rotateY(180deg);
+}
+
+.card.reverse .card-content .card-front.reverse{
+    background-color: white;
+    transform: rotateY(0deg);
+}
+
+.card.reverse:hover .card-content{
+    transform: rotateY(0deg);
+}
+
+.card.reverse .card-content .card-front.reverse a:visited{
+    color: fuchsia;
+}
+
+/* FOOTER */
+footer{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
